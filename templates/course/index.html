@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Federleicht Kursverwaltung</title>
+    <link rel="stylesheet" href="/assets/styles.css?v=20260604-payment">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <p class="eyebrow">Federleicht</p>
+          <h1>Kursverwaltung</h1>
+          <p class="lead">Kurse, Termine und Buchungen in einem ruhigen Arbeitsbereich.</p>
+        </div>
+        <button id="resetDemo" class="ghost-button" type="button">Beispieldaten</button>
+      </header>
+
+      <section class="summary-grid" aria-label="Kennzahlen">
+        <article>
+          <span id="totalCourses">0</span>
+          <p>Kurse</p>
+        </article>
+        <article>
+          <span id="totalBookings">0</span>
+          <p>Buchungen</p>
+        </article>
+        <article>
+          <span id="openSeats">0</span>
+          <p>Freie Plaetze</p>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <aside class="panel">
+          <h2>Kurs anlegen</h2>
+          <form id="courseForm">
+            <label>
+              Kurstitel
+              <input id="title" name="title" type="text" required placeholder="z. B. Kreatives Schreiben">
+            </label>
+            <label>
+              Kursleitung
+              <input id="teacher" name="teacher" type="text" required placeholder="Name">
+            </label>
+            <div class="field-row">
+              <label>
+                Datum
+                <input id="date" name="date" type="date" required>
+              </label>
+              <label>
+                Uhrzeit
+                <input id="time" name="time" type="time" required>
+              </label>
+            </div>
+            <div class="field-row">
+              <label>
+                Plaetze
+                <input id="capacity" name="capacity" type="number" min="1" max="99" required>
+              </label>
+              <label>
+                Buchungen
+                <input id="booked" name="booked" type="number" min="0" max="99" required>
+              </label>
+            </div>
+            <label>
+              Zoom-Link optional
+              <input id="zoomLink" name="zoomLink" type="url" placeholder="Leer lassen fuer Zoom-Platzhalter">
+            </label>
+            <label>
+              Status
+              <select id="status" name="status">
+                <option value="geplant">Geplant</option>
+                <option value="offen">Offen</option>
+                <option value="ausgebucht">Ausgebucht</option>
+              </select>
+            </label>
+            <button class="primary-button" type="submit">Kurs speichern</button>
+          </form>
+        </aside>
+
+        <section class="course-area">
+          <div class="toolbar">
+            <input id="search" type="search" placeholder="Kurse suchen" aria-label="Kurse suchen">
+            <select id="statusFilter" aria-label="Status filtern">
+              <option value="alle">Alle Status</option>
+              <option value="geplant">Geplant</option>
+              <option value="offen">Offen</option>
+              <option value="ausgebucht">Ausgebucht</option>
+            </select>
+          </div>
+          <div id="courseList" class="course-list" aria-live="polite"></div>
+        </section>
+      </section>
+    </main>
+    <script src="/assets/app.js?v=20260604-payment"></script>
+  </body>
+</html>
