@@ -16,6 +16,7 @@ jobs:
       APP_ENV: test
       APP_DEBUG: 1
       APP_SECRET: ci_dummy_secret
+      DEFAULT_URI: http://127.0.0.1:8092
       DB_HOST: 127.0.0.1
       DB_PORT: 3306
       DB_NAME: kurs_ci
