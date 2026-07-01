@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  quality:
+    name: Composer, Symfony and syntax checks
+    runs-on: ubuntu-latest
+
+    env:
+      APP_ENV: test
+      APP_DEBUG: 1
+      APP_SECRET: ci_dummy_secret
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_NAME: kurs_ci
+      DB_USER: ci
+      DB_PASSWORD: ci
+      TENTARY_WEBHOOK_SECRET: ci_dummy_webhook_secret
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: ctype, curl, iconv, pdo
+          coverage: none
+
+      - name: Validate Composer files
+        run: composer validate --strict
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Check PHP syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r file; do
+            php -l "$file" >/dev/null
+          done < <(find bin config public src -name '*.php' -type f | sort)
+
+      - name: Lint Symfony container
+        run: php bin/console lint:container --env=test

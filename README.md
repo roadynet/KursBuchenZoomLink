@@ -1,5 +1,7 @@
 # KursBuchenZoomLink
 
+[![CI](https://github.com/roadynet/KursBuchenZoomLink/actions/workflows/ci.yml/badge.svg)](https://github.com/roadynet/KursBuchenZoomLink/actions/workflows/ci.yml)
+
 Symfony-App für Kursverwaltung, Buchungen, Zahlungsbestätigung, Zoom-Link-Erzeugung und Tentary/Zapier-Webhook.
 
 ## Auf einen Blick
