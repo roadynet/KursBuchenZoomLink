@@ -16,6 +16,7 @@ Symfony-App für Kursverwaltung, Buchungen, Zahlungsbestätigung, Zoom-Link-Erze
 | Wo liegt die Fachlogik? | Controller delegieren an Repository- und Service-Klassen. |
 | Wie kommen Buchungen ins System? | Manuell über UI/API oder automatisch über Tentary/Zapier-Webhook. |
 | Welche Praxis ist belegbar? | [Production Evidence](docs/production-evidence.md) |
+| Wie wird Betrieb dokumentiert? | [OPERATIONS.md](OPERATIONS.md) |
 | Wie wird Live-Konfiguration geschützt? | Echte Werte gehören in `.env.local` oder Servervariablen, nicht ins Repository. |
 | Was ist bewusst klein gehalten? | Kein vollständiges CRM, kein Payment-System, keine Mandantenverwaltung. |
 
@@ -79,3 +80,5 @@ http://127.0.0.1:8092
 Dieses Repository ist als schlanke Kursverwaltungs- und Integrationsdemo gedacht. Es ersetzt kein vollständiges Buchhaltungssystem, kein CRM und keine produktive Zahlungsabwicklung.
 
 Weitere Praxis-Evidence: [Production Evidence](docs/production-evidence.md)
+
+Operations-Runbook: [OPERATIONS.md](OPERATIONS.md)
