@@ -5,7 +5,7 @@ This directory collects safe public evidence for KursBuchenZoomLink.
 ## Current Evidence
 
 - GitHub Actions `CI`:
-  `https://github.com/roadynet/KursBuchenZoomLink/actions/runs/28535320279`
+  `https://github.com/roadynet/KursBuchenZoomLink/actions/workflows/ci.yml`
 - [CI verification notes](ci-verification-2026-07-01.md)
 
 ## Related Documents

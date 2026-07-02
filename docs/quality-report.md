@@ -13,7 +13,7 @@ CI: success
 Workflow evidence:
 
 ```text
-https://github.com/roadynet/KursBuchenZoomLink/actions/runs/28535320279
+https://github.com/roadynet/KursBuchenZoomLink/actions/workflows/ci.yml
 ```
 
 ## Check Coverage Areas

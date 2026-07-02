@@ -11,7 +11,7 @@ Recorded status:
 ```text
 Workflow: CI
 Status: success
-URL: https://github.com/roadynet/KursBuchenZoomLink/actions/runs/28535320279
+Workflow URL: https://github.com/roadynet/KursBuchenZoomLink/actions/workflows/ci.yml
 ```
 
 ## Covered Checks
