@@ -4,6 +4,14 @@
 
 Symfony-App für Kursverwaltung, Buchungen, Zahlungsbestätigung, Zoom-Link-Erzeugung und Tentary/Zapier-Webhook.
 
+## Audit & Evidence
+
+- [Audit Report](docs/audit-report-2026-07-01.md)
+- [Quality Report](docs/quality-report.md)
+- [Evidence Index](docs/evidence/README.md)
+- [Production Evidence](docs/production-evidence.md)
+- [Operations Runbook](OPERATIONS.md)
+
 ## Auf einen Blick
 
 - **Was ist es?** Eine kleine Backend-Anwendung für Online-Kurse: Kurs anlegen, Buchung erfassen, Zahlung bestätigen, Zoom-Link erzeugen.
