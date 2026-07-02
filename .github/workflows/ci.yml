@@ -52,6 +52,9 @@ jobs:
       - name: Lint Symfony container
         run: php bin/console lint:container --env=test
 
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyse --memory-limit=1G
+
       - name: Run PHPUnit
         run: vendor/bin/phpunit
 
