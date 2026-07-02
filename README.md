@@ -19,7 +19,7 @@ Symfony-App für Kursverwaltung, Buchungen, Zahlungsbestätigung, Zoom-Link-Erze
 - **PHPUnit:** Service-Tests prüfen Zoom-Fallback und vorhandene API-Meeting-Daten.
 - **Symfony-Gates:** Composer-Validierung, PHP-Syntaxcheck und Container-Lint laufen bei jedem Push.
 - **Portfolio-Schutz:** Markdown-Linkcheck, Env-Policy und Secret-Pattern-Scan sind Teil der CI.
-- **PHPStan:** als nächster Quality Gate dokumentiert, nachdem die wichtigsten Service-Tests sichtbar sind.
+- **PHPStan:** Level 3 läuft mit Symfony-Unterstützung als verpflichtender CI-Quality-Gate.
 
 ## Auf einen Blick
 

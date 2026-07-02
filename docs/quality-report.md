@@ -76,6 +76,7 @@ Performed checks:
 - Composer validation
 - PHP syntax check
 - Symfony container lint
+- PHPStan Level 3
 - local Markdown link check
 - secret-token pattern scan
 - GitHub Actions status check
@@ -83,7 +84,7 @@ Performed checks:
 ## Known Gaps
 
 - no formal database migration framework yet
-- no PHPStan baseline yet
+- no PHPStan baseline needed for the current level 3 setup
 - no live public demo URL documented
 
 These are intentionally listed as next steps, not hidden.

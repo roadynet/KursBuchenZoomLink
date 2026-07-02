@@ -4,7 +4,8 @@
 
 This audit records the PHPStan/static-analysis status for KursBuchenZoomLink.
 
-The repository does not yet commit a PHPStan configuration or baseline.
+The repository now commits a repeatable PHPStan setup and runs it in GitHub
+Actions.
 
 ## Current State
 
@@ -13,6 +14,7 @@ Current repeatable gates:
 ```text
 composer validate --strict
 vendor/bin/phpunit
+vendor/bin/phpstan analyse --memory-limit=1G
 php -l across bin/config/public/src
 php bin/console lint:container --env=test
 Markdown link check
@@ -24,28 +26,32 @@ GitHub Actions CI
 Recorded result:
 
 ```text
-CI: success
 Composer validation: OK
+PHPUnit: OK
 PHP syntax: OK
 Symfony container: OK
+PHPStan: no errors
+CI: success
 ```
 
-## Why No Baseline Is Published Yet
+## Baseline Position
 
-The project is a compact integration demo and now has service-level PHPUnit
-tests in public CI. It does not yet commit a PHPStan configuration or baseline.
-The stronger next step is to introduce PHPStan with useful domain context.
+No PHPStan baseline is committed. The current level 3 setup runs cleanly against
+`src` and `tests`.
 
-## Next Step
+## Implemented Setup
 
-Recommended sequence:
+Committed setup:
 
 ```text
-composer require --dev phpstan/phpstan
-vendor/bin/phpstan analyse src
+phpstan.neon
+phpstan/phpstan
+phpstan/phpstan-symfony
+tests/phpstan-console-application.php
+GitHub Actions step: vendor/bin/phpstan analyse --memory-limit=1G
 ```
 
 ## Audit Position
 
-PHPStan is tracked as a next quality gate. Current public evidence is CI-backed
-Composer validation, PHP syntax, Symfony container linting and secret checks.
+PHPStan is now an enforced public quality gate alongside Composer validation,
+PHP syntax checks, Symfony container linting, PHPUnit and secret checks.
