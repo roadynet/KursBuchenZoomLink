@@ -4,6 +4,20 @@
 
 Symfony-App für Kursverwaltung, Buchungen, Zahlungsbestätigung, Zoom-Link-Erzeugung und Tentary/Zapier-Webhook.
 
+## Best place to start
+
+1. **Produktbild:** Buchung erfassen, Zahlung bestaetigen, Zoom-Link erzeugen und Teilnehmer informieren.
+2. **Bester Codepfad:** `src/Controller`, `src/Repository`, `src/Service` und Webhook-Verarbeitung.
+3. **Architektur:** siehe [Senior-Level Review-Pfad](#senior-level-review-pfad) und [OPERATIONS.md](OPERATIONS.md)
+4. **Qualitaet:** [Quality Report](docs/quality-report.md) und gruene CI mit PHPUnit, Container-Lint und PHPStan Level 3
+5. **Grenze:** bewusst kleines Integrationsprodukt, kein CRM und keine produktive Zahlungsabwicklung.
+
+Portfolio-Kontext: [Roadynet PHP/Symfony Portfolio](https://github.com/roadynet/skillbuilder-showcase/blob/main/PORTFOLIO.md)
+
+## Produktpositionierung
+
+Dieses Projekt zeigt eine schmale, reale Backend-Automation: ein Kurs wird gebucht, ein Zahlungsereignis kommt per UI/API/Webhook an, danach entsteht der Zoom-Workflow. Der Wert liegt nicht in einer grossen Oberflaeche, sondern in klarer Fachlogik, geschuetzten Webhooks und sauber dokumentierten Betriebsgrenzen.
+
 ## Audit & Evidence
 
 - [Audit Report](docs/audit-report-2026-07-01.md)
