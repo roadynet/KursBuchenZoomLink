@@ -9,7 +9,7 @@ on:
 
 jobs:
   quality:
-    name: Composer, Symfony and syntax checks
+    name: PHPUnit, Symfony and syntax checks
     runs-on: ubuntu-latest
 
     env:
@@ -51,6 +51,9 @@ jobs:
 
       - name: Lint Symfony container
         run: php bin/console lint:container --env=test
+
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit
 
       - name: Check local Markdown links
         shell: python

@@ -12,6 +12,15 @@ Symfony-App für Kursverwaltung, Buchungen, Zahlungsbestätigung, Zoom-Link-Erze
 - [Production Evidence](docs/production-evidence.md)
 - [Operations Runbook](OPERATIONS.md)
 
+## Tests & Quality Gates
+
+[![PHPUnit + Symfony Quality Gates](https://img.shields.io/github/actions/workflow/status/roadynet/KursBuchenZoomLink/ci.yml?branch=main&label=PHPUnit%20%2B%20Symfony%20Quality%20Gates)](https://github.com/roadynet/KursBuchenZoomLink/actions/workflows/ci.yml)
+
+- **PHPUnit:** Service-Tests prüfen Zoom-Fallback und vorhandene API-Meeting-Daten.
+- **Symfony-Gates:** Composer-Validierung, PHP-Syntaxcheck und Container-Lint laufen bei jedem Push.
+- **Portfolio-Schutz:** Markdown-Linkcheck, Env-Policy und Secret-Pattern-Scan sind Teil der CI.
+- **PHPStan:** als nächster Quality Gate dokumentiert, nachdem die wichtigsten Service-Tests sichtbar sind.
+
 ## Auf einen Blick
 
 - **Was ist es?** Eine kleine Backend-Anwendung für Online-Kurse: Kurs anlegen, Buchung erfassen, Zahlung bestätigen, Zoom-Link erzeugen.

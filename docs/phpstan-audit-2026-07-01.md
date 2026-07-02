@@ -12,6 +12,7 @@ Current repeatable gates:
 
 ```text
 composer validate --strict
+vendor/bin/phpunit
 php -l across bin/config/public/src
 php bin/console lint:container --env=test
 Markdown link check
@@ -31,17 +32,15 @@ Symfony container: OK
 
 ## Why No Baseline Is Published Yet
 
-The project is a compact integration demo and currently has no PHPUnit suite.
-The stronger next step is to add service-level tests first, then introduce
-PHPStan with useful domain context.
+The project is a compact integration demo and now has service-level PHPUnit
+tests in public CI. It does not yet commit a PHPStan configuration or baseline.
+The stronger next step is to introduce PHPStan with useful domain context.
 
 ## Next Step
 
 Recommended sequence:
 
 ```text
-composer require --dev phpunit/phpunit
-add tests for booking, payment confirmation and webhook handling
 composer require --dev phpstan/phpstan
 vendor/bin/phpstan analyse src
 ```

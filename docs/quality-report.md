@@ -1,6 +1,6 @@
 # Quality Report
 
-## Automated Checks
+## Automated Tests and Checks
 
 The public repository uses a GitHub Actions workflow named `CI`.
 
@@ -17,6 +17,19 @@ https://github.com/roadynet/KursBuchenZoomLink/actions/workflows/ci.yml
 ```
 
 ## Check Coverage Areas
+
+### PHPUnit Service Tests
+
+CI runs PHPUnit for service-level behavior:
+
+```text
+vendor/bin/phpunit
+```
+
+Covered behavior:
+
+- Zoom fallback creates a deterministic placeholder meeting when no API credentials are configured.
+- Existing API meeting data is preserved and marked as ready.
 
 ### Composer Validation
 
@@ -59,6 +72,7 @@ verifies that no obvious token patterns are committed.
 
 Performed checks:
 
+- PHPUnit service tests
 - Composer validation
 - PHP syntax check
 - Symfony container lint
@@ -68,7 +82,6 @@ Performed checks:
 
 ## Known Gaps
 
-- no PHPUnit test suite yet
 - no formal database migration framework yet
 - no PHPStan baseline yet
 - no live public demo URL documented
